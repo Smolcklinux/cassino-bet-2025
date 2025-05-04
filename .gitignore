@@ -1,0 +1,25 @@
+# Ignorar backups e arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar node_modules caso use Node.js futuramente
+node_modules/
+
+# Ignorar arquivos temporários
+*.log
+*.tmp
+*.bak
+
+# Ignorar configurações de IDEs/editores
+.vscode/
+*.code-workspace
+.idea/
+
+# Ignorar cache do navegador ou builds
+dist/
+build/
+.cache/
+
+# Arquivos ocultos de sistemas Unix
+.*swp
+*~

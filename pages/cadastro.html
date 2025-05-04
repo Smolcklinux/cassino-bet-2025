@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastro - Cassino Estelar</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Navbar -->
+  <header class="bg-gray-800 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-yellow-400">Cassino Estelar</a>
+    </div>
+  </header>
+
+  <!-- Formulário de Cadastro -->
+  <section class="py-10 px-6 max-w-md mx-auto">
+    <h2 class="text-3xl font-bold text-yellow-400 text-center mb-6">Criar Conta</h2>
+    
+    <div class="bg-gray-800 p-6 rounded-lg">
+      <form action="#" method="POST">
+        <div class="mb-4">
+          <label for="nome" class="block mb-1">Nome completo</label>
+          <input type="text" id="nome" name="nome" class="w-full p-3 rounded bg-gray-900 border border-gray-700" required />
+        </div>
+
+        <div class="mb-4">
+          <label for="email" class="block mb-1">E-mail</label>
+          <input type="email" id="email" name="email" class="w-full p-3 rounded bg-gray-900 border border-gray-700" required />
+        </div>
+
+        <div class="mb-4">
+          <label for="senha" class="block mb-1">Senha</label>
+          <input type="password" id="senha" name="senha" class="w-full p-3 rounded bg-gray-900 border border-gray-700" required />
+        </div>
+
+        <div class="mb-6">
+          <label for="confirmar" class="block mb-1">Confirmar Senha</label>
+          <input type="password" id="confirmar" name="confirmar" class="w-full p-3 rounded bg-gray-900 border border-gray-700" required />
+        </div>
+
+        <button type="submit" class="w-full bg-yellow-400 text-gray-900 font-bold px-6 py-3 rounded hover:bg-yellow-300 transition">Cadastrar</button>
+      </form>
+
+      <p class="text-center text-sm text-gray-400 mt-4">
+        Já tem uma conta? <a href="login.html" class="text-yellow-400 hover:underline">Entrar</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 p-6 text-center mt-10">
+    <p class="text-gray-400">© 2025 Cassino Estelar. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>

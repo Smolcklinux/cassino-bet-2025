@@ -1,0 +1,67 @@
+<!-- Barra de navegação -->
+<nav class="bg-gradient-to-r from-pink-600 to-purple-600 p-4">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <!-- Logo -->
+    <div class="text-2xl font-bold text-yellow-400">
+      Cassino Estelar
+    </div>
+    
+    <!-- Menu de Navegação -->
+    <div class="hidden md:flex gap-6">
+      <a href="#" class="text-white hover:text-yellow-400 transition">Início</a>
+      <a href="#" class="text-white hover:text-yellow-400 transition">Slots</a>
+      <a href="#" class="text-white hover:text-yellow-400 transition">Cassino ao Vivo</a>
+      <a href="#" class="text-white hover:text-yellow-400 transition">Promoções</a>
+      <a href="#" class="text-white hover:text-yellow-400 transition">Suporte</a>
+    </div>
+
+    <!-- Botões de Login e Cadastro -->
+    <div class="flex gap-2">
+      <button
+        class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-full font-bold hover:scale-105 hover:shadow-[0_0_15px_rgba(255,215,0,0.7)] transition"
+        onclick="openLoginModal()">
+        Login
+      </button>
+      <button
+        class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-full font-bold hover:scale-105 hover:shadow-[0_0_15px_rgba(255,215,0,0.7)] transition"
+        onclick="openSignupModal()">
+        Cadastro
+      </button>
+    </div>
+
+    <!-- Ícone de Menu (Responsivo) -->
+    <button class="md:hidden text-white" onclick="toggleSidebar()">
+      ☰
+    </button>
+  </div>
+
+  <!-- Sidebar (para dispositivos móveis) -->
+  <div id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-gray-900 z-30 transform -translate-x-full transition-transform md:hidden">
+    <button class="text-yellow-400 p-4" onclick="toggleSidebar()">✕</button>
+    <ul class="flex flex-col gap-4 p-4">
+      <li><a href="#" class="text-white hover:text-yellow-400 transition">Início</a></li>
+      <li><a href="#" class="text-white hover:text-yellow-400 transition">Slots</a></li>
+      <li><a href="#" class="text-white hover:text-yellow-400 transition">Cassino ao Vivo</a></li>
+      <li><a href="#" class="text-white hover:text-yellow-400 transition">Promoções</a></li>
+      <li><a href="#" class="text-white hover:text-yellow-400 transition">Suporte</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Scripts de Interação -->
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('translate-x-0');
+  }
+
+  function openLoginModal() {
+    // Função para abrir o modal de login
+    alert("Abrir modal de login");
+  }
+
+  function openSignupModal() {
+    // Função para abrir o modal de cadastro
+    alert("Abrir modal de cadastro");
+  }
+</script>

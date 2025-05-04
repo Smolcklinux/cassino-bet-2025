@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Cassino Estelar</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-800 text-white font-sans">
+
+  <!-- Navbar -->
+  <header class="bg-gray-900 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-yellow-400">Cassino Estelar</a>
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="index.html" class="text-gray-300 hover:text-yellow-400">Início</a></li>
+          <li><a href="cadastro.html" class="text-gray-300 hover:text-yellow-400">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Login Section -->
+  <section class="py-16 px-6 flex justify-center items-center">
+    <div class="bg-gray-900 p-8 rounded-lg max-w-sm w-full">
+      <h2 class="text-3xl font-bold text-yellow-400 text-center mb-6">Entrar no Cassino Estelar</h2>
+      
+      <form action="dashboard.html" method="POST">
+        <div class="mb-6">
+          <label for="email" class="block text-gray-300 mb-2">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="Seu e-mail" class="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-yellow-400" required>
+        </div>
+        
+        <div class="mb-6">
+          <label for="senha" class="block text-gray-300 mb-2">Senha</label>
+          <input type="password" id="senha" name="senha" placeholder="Sua senha" class="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-yellow-400" required>
+        </div>
+
+        <div class="mb-6">
+          <button type="submit" class="w-full bg-yellow-400 text-gray-900 px-6 py-3 rounded-full font-bold hover:scale-105 transition">Entrar</button>
+        </div>
+        
+        <div class="text-center">
+          <p class="text-gray-300">Ainda não tem uma conta? <a href="cadastro.html" class="text-yellow-400 hover:text-yellow-500">Cadastre-se agora!</a></p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 p-6 text-center">
+    <p class="text-gray-300">© 2025 Cassino Estelar. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>

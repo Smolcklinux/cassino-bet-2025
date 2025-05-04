@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Admin - Cassino Estelar</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body class="bg-gray-800 text-white font-sans">
+  <!-- Sidebar -->
+  <div class="flex">
+    <aside class="w-64 h-screen bg-gray-900 p-4">
+      <div class="text-center mb-6">
+        <h2 class="text-2xl font-bold text-yellow-400">Cassino Estelar</h2>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#" class="block py-2 text-gray-300 hover:text-yellow-400">Visão Geral</a></li>
+          <li><a href="admin-usuarios.html" class="block py-2 text-gray-300 hover:text-yellow-400">Usuários</a></li>
+          <li><a href="admin-depositos.html" class="block py-2 text-gray-300 hover:text-yellow-400">Depósitos</a></li>
+          <li><a href="admin-saque.html" class="block py-2 text-gray-300 hover:text-yellow-400">Saques</a></li>
+          <li><a href="admin-jogos.html" class="block py-2 text-gray-300 hover:text-yellow-400">Jogos</a></li>
+          <li><a href="#" class="block py-2 text-gray-300 hover:text-yellow-400">Relatórios</a></li>
+          <li><a href="#" class="block py-2 text-gray-300 hover:text-yellow-400">Configurações</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6">
+      <header class="mb-6 flex justify-between items-center">
+        <h1 class="text-3xl font-bold text-yellow-400">Painel de Administração</h1>
+        <button class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-full font-bold hover:scale-105 hover:shadow-[0_0_15px_rgba(255,215,0,0.7)] transition">Sair</button>
+      </header>
+
+      <!-- Informações do Admin -->
+      <section>
+        <h2 class="text-2xl font-bold mb-4 text-yellow-400">Usuários Cadastrados</h2>
+        
+        <!-- Tabela de Usuários -->
+        <table class="min-w-full bg-gray-700 rounded-lg">
+          <thead>
+            <tr class="text-left">
+              <th class="px-4 py-2 text-yellow-400">ID</th>
+              <th class="px-4 py-2 text-yellow-400">Nome</th>
+              <th class="px-4 py-2 text-yellow-400">E-mail</th>
+              <th class="px-4 py-2 text-yellow-400">Saldo</th>
+              <th class="px-4 py-2 text-yellow-400">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Exemplo de usuário -->
+            <tr>
+              <td class="px-4 py-2">1</td>
+              <td class="px-4 py-2">João Silva</td>
+              <td class="px-4 py-2">joao@email.com</td>
+              <td class="px-4 py-2">R$ 250,00</td>
+              <td class="px-4 py-2">
+                <button class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-full font-bold hover:scale-105 hover:shadow-[0_0_15px_rgba(255,215,0,0.7)] transition">Alterar Saldo</button>
+                <button class="bg-red-500 text-white px-4 py-2 rounded-full font-bold hover:scale-105 hover:shadow-[0_0_15px_rgba(255,0,0,0.7)] transition">Suspender</button>
+              </td>
+            </tr>
+            <!-- Mais usuários -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Modal para Alterar Saldo -->
+      <div id="alterar-saldo-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-40 hidden">
+        <div class="bg-gray-900 p-8 rounded-xl w-96">
+          <h2 class="text-2xl font-bold text-yellow-400 mb-4">Alterar Saldo</h2>
+          <form id="alterar-saldo-form" class="space-y-4">
+            <div>
+              <label for="novo-saldo" class="text-white">Novo Saldo</label>
+              <input 
+                type="number" 
+                id="novo-saldo" 
+                class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-yellow-400" 
+                placeholder="Novo saldo do usuário" 
+                required 
+              />
+            </div>
+            <div class="flex justify-between gap-4">
+              <button type="submit" class="bg-yellow-400 text-gray-900 px-6 py-2 rounded-full font-bold">Salvar</button>
+              <button type="button" class="bg-gray-700 text-white px-6 py-2 rounded-full font-bold" onclick="closeModal()">Cancelar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Função para abrir o modal
+    function openModal() {
+      document.getElementById('alterar-saldo-modal').classList.remove('hidden');
+    }
+
+    // Função para fechar o modal
+    function closeModal() {
+      document.getElementById('alterar-saldo-modal').classList.add('hidden');
+    }
+
+    // Exemplo de ação de alterar saldo
+    document.querySelectorAll('.alterar-saldo').forEach(button => {
+      button.addEventListener('click', openModal);
+    });
+
+    // Função para enviar o formulário
+    document.getElementById('alterar-saldo-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const novoSaldo = document.getElementById('novo-saldo').value;
+      // Lógica para enviar a atualização do saldo para o servidor
+      alert(`Saldo alterado para: R$ ${novoSaldo}`);
+      closeModal();
+    });
+  </script>
+</body>
+</html>

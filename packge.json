@@ -1,0 +1,17 @@
+{
+  "name": "cassino-estelar",
+  "version": "1.0.0",
+  "description": "Site de cassino com login, cadastro, jogos, recarga via Pix e painel admin",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server",
+    "deploy": "echo 'Use GitHub Pages para publicar este site.'"
+  },
+  "author": "Pudim_NFT",
+  "license": "MIT",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
